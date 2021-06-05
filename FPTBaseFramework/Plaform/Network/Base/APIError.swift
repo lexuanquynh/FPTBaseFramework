@@ -8,7 +8,7 @@
 import Foundation
 
 /// Enum of API Errors
-enum APIError: Error {
+public enum APIError: Error {
     /// No data received from the server.
     case noData
     /// The server response was invalid (unexpected format).
@@ -25,7 +25,7 @@ enum APIError: Error {
 
 
 /// Class that handles the dispatch of requests to an environment with a given configuration.
-class APIRequestDispatcher: RequestDispatcherProtocol {
+public class APIRequestDispatcher: RequestDispatcherProtocol {
 
     /// The environment configuration.
     private var environment: EnvironmentProtocol
@@ -37,7 +37,7 @@ class APIRequestDispatcher: RequestDispatcherProtocol {
     /// - Parameters:
     ///   - environment: Instance conforming to `EnvironmentProtocol` used to determine on which environment the requests will be executed.
     ///   - networkSession: Instance conforming to `NetworkSessionProtocol` used for executing requests with a specific configuration.
-    required init(environment: EnvironmentProtocol, networkSession: NetworkSessionProtocol) {
+    public required init(environment: EnvironmentProtocol, networkSession: NetworkSessionProtocol) {
         self.environment = environment
         self.networkSession = networkSession
     }
@@ -46,7 +46,7 @@ class APIRequestDispatcher: RequestDispatcherProtocol {
     /// - Parameters:
     ///   - request: Instance conforming to `RequestProtocol`
     ///   - completion: Completion handler.
-    func execute(request: RequestProtocol, completion: @escaping (OperationResult) -> Void) -> URLSessionTask? {
+    public func execute(request: RequestProtocol, completion: @escaping (OperationResult) -> Void) -> URLSessionTask? {
         // Create a URL request.
         guard var urlRequest = request.urlRequest(with: environment) else {
             completion(.error(APIError.badRequest("Invalid URL for: \(request)"), nil))

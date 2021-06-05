@@ -7,23 +7,23 @@
 
 import Foundation
 
-class LoginViewModel {
+public class LoginViewModel {
     private let useCase: LoginUseCase
-    
-    init(useCase: LoginUseCase) {
+
+    public  init(useCase: LoginUseCase) {
         self.useCase = useCase
     }
-    
-    func login(username: String, password: String) {
+
+    public  func login(username: String, password: String) {
         self.useCase.login(username: username, password: password) { response in
             // Do anything
             switch response {
             case .success(let loginModel):
                 print(loginModel)
             case .failure(let error):
-                print(error)                
+                print(error)
             }
         }
-        
+
     }
 }

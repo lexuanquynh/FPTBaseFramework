@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2263186A266B7EF300DA4240 /* Universal-FPTBase */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2263186D266B7EF300DA4240 /* Build configuration list for PBXAggregateTarget "Universal-FPTBase" */;
+			buildPhases = (
+				2263186E266B7F0100DA4240 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Universal-FPTBase";
+			productName = "Universal-FPTBase";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		226317F3266B66C000DA4240 /* FPTBaseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226317E9266B66BF00DA4240 /* FPTBaseFramework.framework */; };
 		226317F8266B66C000DA4240 /* FPTBaseFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226317F7266B66C000DA4240 /* FPTBaseFrameworkTests.swift */; };
@@ -290,6 +304,9 @@
 					226317F1266B66C000DA4240 = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					2263186A266B7EF300DA4240 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = 226317E3266B66BF00DA4240 /* Build configuration list for PBXProject "FPTBaseFramework" */;
@@ -307,6 +324,7 @@
 			targets = (
 				226317E8266B66BF00DA4240 /* FPTBaseFramework */,
 				226317F1266B66C000DA4240 /* FPTBaseFrameworkTests */,
+				2263186A266B7EF300DA4240 /* Universal-FPTBase */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +345,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2263186E266B7F0100DA4240 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		226317E5266B66BF00DA4240 /* Sources */ = {
@@ -578,6 +616,22 @@
 			};
 			name = Release;
 		};
+		2263186B266B7EF300DA4240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2263186C266B7EF300DA4240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -604,6 +658,15 @@
 			buildConfigurations = (
 				22631801266B66C000DA4240 /* Debug */,
 				22631802266B66C000DA4240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2263186D266B7EF300DA4240 /* Build configuration list for PBXAggregateTarget "Universal-FPTBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2263186B266B7EF300DA4240 /* Debug */,
+				2263186C266B7EF300DA4240 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct LoginModel: Codable {
-    var success: Bool?
-    var message: String?
+public struct LoginModel: Codable {
+    public var success: Bool?
+    public var message: String?
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case success
         case message
     }

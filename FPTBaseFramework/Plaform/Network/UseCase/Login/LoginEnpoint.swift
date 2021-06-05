@@ -8,45 +8,45 @@
 import Foundation
 
 /// Login Enpoint
-enum LoginEnpoint {
+public enum LoginEnpoint {
     case login(parameters: [String: Any?])
 }
 
 extension LoginEnpoint: RequestProtocol {
-    var path: String {
+    public var path: String {
         switch self {
         case .login(_):
             return "/login"
         }
     }
 
-    var method: RequestMethod {
+    public var method: RequestMethod {
         switch self {
         case .login(_):
             return .post
         }
     }
 
-    var headers: ReaquestHeaders? {
+    public var headers: ReaquestHeaders? {
         return nil
     }
 
-    var parameters: RequestParameters? {
+    public var parameters: RequestParameters? {
         switch self {
         case .login(let parameters):
             return parameters
         }
     }
 
-    var requestType: RequestType {
+    public var requestType: RequestType {
         return .data
     }
 
-    var responseType: ResponseType {
+    public var responseType: ResponseType {
         return .json
     }
 
-    var progressHandler: ProgressHandler? {
+    public var progressHandler: ProgressHandler? {
         get { nil }
         set { }
     }

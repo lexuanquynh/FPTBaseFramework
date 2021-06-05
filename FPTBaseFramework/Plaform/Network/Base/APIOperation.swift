@@ -8,23 +8,23 @@
 import Foundation
 
 /// API Operation class that can  execute and cancel a request.
-class APIOperation: OperationProtocol {
-    typealias Output = OperationResult
+public class APIOperation: OperationProtocol {
+    public typealias Output = OperationResult
 
     /// The `URLSessionTask` to be executed/
     private var task: URLSessionTask?
 
     /// Instance conforming to the `RequestProtocol`.
-    internal var request: RequestProtocol
+    public var request: RequestProtocol
 
     /// Designated initializer.
     /// - Parameter request: Instance conforming to the `RequestProtocol`.
-    init(_ request: RequestProtocol) {
+    public init(_ request: RequestProtocol) {
         self.request = request
     }
 
     /// Cancels the operation and the encapsulated task.
-    func cancel() {
+    public func cancel() {
         task?.cancel()
     }
 
@@ -32,19 +32,19 @@ class APIOperation: OperationProtocol {
     /// - Parameters:
     ///   - requestDispatcher: `RequestDispatcherProtocol` object that will execute the request.
     ///   - completion: Completion block.
-    func execute(in requestDispatcher: RequestDispatcherProtocol, completion: @escaping (OperationResult) -> Void) {
+    public func execute(in requestDispatcher: RequestDispatcherProtocol, completion: @escaping (OperationResult) -> Void) {
         task = requestDispatcher.execute(request: request, completion: { result in
             completion(result)
         })
     }
 }
 
-extension RequestProtocol {
+public extension RequestProtocol {
 
     /// Creates a URLRequest from this instance.
     /// - Parameter environment: The environment against which the `URLRequest` must be constructed.
     /// - Returns: An optional `URLRequest`.
-    public func urlRequest(with environment: EnvironmentProtocol) -> URLRequest? {
+    func urlRequest(with environment: EnvironmentProtocol) -> URLRequest? {
         // Create the base URL.
         guard let url = url(with: environment.baseURL) else {
             return nil

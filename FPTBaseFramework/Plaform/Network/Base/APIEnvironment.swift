@@ -8,7 +8,7 @@
 import Foundation
 
 /// Protocol to which environments must conform.
-protocol EnvironmentProtocol {
+public protocol EnvironmentProtocol {
     /// The default HTTP request headers for the environment.
     var headers: ReaquestHeaders? { get }
 
@@ -17,14 +17,14 @@ protocol EnvironmentProtocol {
 }
 
 /// Environments enum.
-enum APIEnvironment: EnvironmentProtocol {
+public enum APIEnvironment: EnvironmentProtocol {
     /// The development environment.
     case development
     /// The production environment.
     case production
 
     /// The default HTTP request headers for the given environment.
-    var headers: ReaquestHeaders? {
+    public var headers: ReaquestHeaders? {
         switch self {
         case .development:
             return [
@@ -37,7 +37,7 @@ enum APIEnvironment: EnvironmentProtocol {
     }
 
     /// The base URL of the given environment.
-    var baseURL: String {
+    public var baseURL: String {
         switch self {
         case .development:
             return "http://api.localhost:3000/v1/"

@@ -7,8 +7,8 @@
 
 import Foundation
 
-class NetworkLoginUseCaseProvider: LoginUseCaseProvider {
-    func makeLoginUseCase() -> LoginUseCase {
+public class NetworkLoginUseCaseProvider: LoginUseCaseProvider {
+    public func makeLoginUseCase() -> LoginUseCase {
         let networkLoginUseCase = NetworkLoginUseCase()
         return networkLoginUseCase
     }
