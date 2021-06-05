@@ -10,22 +10,20 @@ import Foundation
 public class LoginViewModel {
     private let useCase: LoginUseCase!
     private let networkLoginUseCaseProvider: NetworkLoginUseCaseProvider!
-    
+
     public init() {
         self.networkLoginUseCaseProvider = NetworkLoginUseCaseProvider()
         self.useCase = self.networkLoginUseCaseProvider.makeLoginUseCase()
     }
 
-    public  func login(username: String, password: String) {
+    /// login API
+    /// - Parameters:
+    ///   - username: username to login
+    ///   - password: password to login
+    ///   - completion: completion response from server
+    public func login(username: String, password: String,  _ completion : @escaping(Result<LoginModel, APIError>) -> Void) {
         self.useCase.login(username: username, password: password) { response in
-            // Do anything
-            switch response {
-            case .success(let loginModel):
-                print(loginModel)
-            case .failure(let error):
-                print(error)
-            }
+            completion(response)
         }
-
     }
 }
