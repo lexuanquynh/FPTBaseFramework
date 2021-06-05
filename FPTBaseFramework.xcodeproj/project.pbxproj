@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		226317F3266B66C000DA4240 /* FPTBaseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226317E9266B66BF00DA4240 /* FPTBaseFramework.framework */; };
+		226317F8266B66C000DA4240 /* FPTBaseFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226317F7266B66C000DA4240 /* FPTBaseFrameworkTests.swift */; };
+		226317FA266B66C000DA4240 /* FPTBaseFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 226317EC266B66BF00DA4240 /* FPTBaseFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22631807266B6C2D00DA4240 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631806266B6C2C00DA4240 /* LoginUseCase.swift */; };
+		2263180B266B6C7300DA4240 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263180A266B6C7300DA4240 /* LoginModel.swift */; };
+		2263180D266B6D1400DA4240 /* LoginUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263180C266B6D1400DA4240 /* LoginUseCaseProvider.swift */; };
+		2263182C266B705000DA4240 /* NetworkLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263182B266B705000DA4240 /* NetworkLoginUseCase.swift */; };
+		2263182E266B705900DA4240 /* NetworkLoginUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263182D266B705900DA4240 /* NetworkLoginUseCaseProvider.swift */; };
+		22631833266B711D00DA4240 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631832266B711D00DA4240 /* LoginViewModel.swift */; };
+		22631835266B72EF00DA4240 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631834266B72EF00DA4240 /* RequestType.swift */; };
+		22631837266B735D00DA4240 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631836266B735D00DA4240 /* APIEnvironment.swift */; };
+		22631839266B73AE00DA4240 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631838266B73AE00DA4240 /* NetworkSessionProtocol.swift */; };
+		2263183B266B73DC00DA4240 /* APINetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263183A266B73DC00DA4240 /* APINetworkSession.swift */; };
+		2263183D266B74AB00DA4240 /* OperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263183C266B74AB00DA4240 /* OperationProtocol.swift */; };
+		2263183F266B74F400DA4240 /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263183E266B74F400DA4240 /* APIOperation.swift */; };
+		22631841266B753A00DA4240 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631840266B753A00DA4240 /* APIError.swift */; };
+		2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631849266B78C800DA4240 /* LoginEnpoint.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		226317F4266B66C000DA4240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 226317E0266B66BF00DA4240 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 226317E8266B66BF00DA4240;
+			remoteInfo = FPTBaseFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		226317E9266B66BF00DA4240 /* FPTBaseFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FPTBaseFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		226317EC266B66BF00DA4240 /* FPTBaseFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPTBaseFramework.h; sourceTree = "<group>"; };
+		226317ED266B66BF00DA4240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226317F2266B66C000DA4240 /* FPTBaseFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPTBaseFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		226317F7266B66C000DA4240 /* FPTBaseFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTBaseFrameworkTests.swift; sourceTree = "<group>"; };
+		226317F9266B66C000DA4240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22631806266B6C2C00DA4240 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		2263180A266B6C7300DA4240 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		2263180C266B6D1400DA4240 /* LoginUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseProvider.swift; sourceTree = "<group>"; };
+		2263182B266B705000DA4240 /* NetworkLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoginUseCase.swift; sourceTree = "<group>"; };
+		2263182D266B705900DA4240 /* NetworkLoginUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoginUseCaseProvider.swift; sourceTree = "<group>"; };
+		22631832266B711D00DA4240 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		22631834266B72EF00DA4240 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		22631836266B735D00DA4240 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		22631838266B73AE00DA4240 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
+		2263183A266B73DC00DA4240 /* APINetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkSession.swift; sourceTree = "<group>"; };
+		2263183C266B74AB00DA4240 /* OperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProtocol.swift; sourceTree = "<group>"; };
+		2263183E266B74F400DA4240 /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
+		22631840266B753A00DA4240 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		22631849266B78C800DA4240 /* LoginEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnpoint.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		226317E6266B66BF00DA4240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226317EF266B66C000DA4240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226317F3266B66C000DA4240 /* FPTBaseFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		226317DF266B66BF00DA4240 = {
+			isa = PBXGroup;
+			children = (
+				226317EB266B66BF00DA4240 /* FPTBaseFramework */,
+				226317F6266B66C000DA4240 /* FPTBaseFrameworkTests */,
+				226317EA266B66BF00DA4240 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		226317EA266B66BF00DA4240 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				226317E9266B66BF00DA4240 /* FPTBaseFramework.framework */,
+				226317F2266B66C000DA4240 /* FPTBaseFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		226317EB266B66BF00DA4240 /* FPTBaseFramework */ = {
+			isa = PBXGroup;
+			children = (
+				22631805266B6C1A00DA4240 /* Application */,
+				22631804266B6BF600DA4240 /* Plaform */,
+				22631803266B6BF100DA4240 /* Domain */,
+				226317EC266B66BF00DA4240 /* FPTBaseFramework.h */,
+				226317ED266B66BF00DA4240 /* Info.plist */,
+			);
+			path = FPTBaseFramework;
+			sourceTree = "<group>";
+		};
+		226317F6266B66C000DA4240 /* FPTBaseFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				226317F7266B66C000DA4240 /* FPTBaseFrameworkTests.swift */,
+				226317F9266B66C000DA4240 /* Info.plist */,
+			);
+			path = FPTBaseFrameworkTests;
+			sourceTree = "<group>";
+		};
+		22631803266B6BF100DA4240 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				22631809266B6C6500DA4240 /* UseCases */,
+				22631808266B6C5D00DA4240 /* Entries */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		22631804266B6BF600DA4240 /* Plaform */ = {
+			isa = PBXGroup;
+			children = (
+				2263180F266B6EAC00DA4240 /* Local */,
+				2263180E266B6EA500DA4240 /* Network */,
+			);
+			path = Plaform;
+			sourceTree = "<group>";
+		};
+		22631805266B6C1A00DA4240 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				22631830266B711000DA4240 /* Modules */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		22631808266B6C5D00DA4240 /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				2263180A266B6C7300DA4240 /* LoginModel.swift */,
+			);
+			path = Entries;
+			sourceTree = "<group>";
+		};
+		22631809266B6C6500DA4240 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				22631806266B6C2C00DA4240 /* LoginUseCase.swift */,
+				2263180C266B6D1400DA4240 /* LoginUseCaseProvider.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2263180E266B6EA500DA4240 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22631842266B759800DA4240 /* UseCase */,
+				2263182F266B70F000DA4240 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2263180F266B6EAC00DA4240 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		2263182F266B70F000DA4240 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				22631834266B72EF00DA4240 /* RequestType.swift */,
+				22631836266B735D00DA4240 /* APIEnvironment.swift */,
+				22631838266B73AE00DA4240 /* NetworkSessionProtocol.swift */,
+				2263183A266B73DC00DA4240 /* APINetworkSession.swift */,
+				2263183C266B74AB00DA4240 /* OperationProtocol.swift */,
+				2263183E266B74F400DA4240 /* APIOperation.swift */,
+				22631840266B753A00DA4240 /* APIError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		22631830266B711000DA4240 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				22631831266B711500DA4240 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		22631831266B711500DA4240 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				22631832266B711D00DA4240 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		22631842266B759800DA4240 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				22631843266B75A700DA4240 /* Login */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		22631843266B75A700DA4240 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2263182B266B705000DA4240 /* NetworkLoginUseCase.swift */,
+				2263182D266B705900DA4240 /* NetworkLoginUseCaseProvider.swift */,
+				22631849266B78C800DA4240 /* LoginEnpoint.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		226317E4266B66BF00DA4240 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226317FA266B66C000DA4240 /* FPTBaseFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		226317E8266B66BF00DA4240 /* FPTBaseFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226317FD266B66C000DA4240 /* Build configuration list for PBXNativeTarget "FPTBaseFramework" */;
+			buildPhases = (
+				226317E4266B66BF00DA4240 /* Headers */,
+				226317E5266B66BF00DA4240 /* Sources */,
+				226317E6266B66BF00DA4240 /* Frameworks */,
+				226317E7266B66BF00DA4240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FPTBaseFramework;
+			productName = FPTBaseFramework;
+			productReference = 226317E9266B66BF00DA4240 /* FPTBaseFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		226317F1266B66C000DA4240 /* FPTBaseFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22631800266B66C000DA4240 /* Build configuration list for PBXNativeTarget "FPTBaseFrameworkTests" */;
+			buildPhases = (
+				226317EE266B66C000DA4240 /* Sources */,
+				226317EF266B66C000DA4240 /* Frameworks */,
+				226317F0266B66C000DA4240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				226317F5266B66C000DA4240 /* PBXTargetDependency */,
+			);
+			name = FPTBaseFrameworkTests;
+			productName = FPTBaseFrameworkTests;
+			productReference = 226317F2266B66C000DA4240 /* FPTBaseFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		226317E0266B66BF00DA4240 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					226317E8266B66BF00DA4240 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					226317F1266B66C000DA4240 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 226317E3266B66BF00DA4240 /* Build configuration list for PBXProject "FPTBaseFramework" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 226317DF266B66BF00DA4240;
+			productRefGroup = 226317EA266B66BF00DA4240 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				226317E8266B66BF00DA4240 /* FPTBaseFramework */,
+				226317F1266B66C000DA4240 /* FPTBaseFrameworkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		226317E7266B66BF00DA4240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226317F0266B66C000DA4240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		226317E5266B66BF00DA4240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2263182C266B705000DA4240 /* NetworkLoginUseCase.swift in Sources */,
+				2263180D266B6D1400DA4240 /* LoginUseCaseProvider.swift in Sources */,
+				22631835266B72EF00DA4240 /* RequestType.swift in Sources */,
+				22631833266B711D00DA4240 /* LoginViewModel.swift in Sources */,
+				2263183F266B74F400DA4240 /* APIOperation.swift in Sources */,
+				2263183B266B73DC00DA4240 /* APINetworkSession.swift in Sources */,
+				2263183D266B74AB00DA4240 /* OperationProtocol.swift in Sources */,
+				22631807266B6C2D00DA4240 /* LoginUseCase.swift in Sources */,
+				2263182E266B705900DA4240 /* NetworkLoginUseCaseProvider.swift in Sources */,
+				22631837266B735D00DA4240 /* APIEnvironment.swift in Sources */,
+				2263180B266B6C7300DA4240 /* LoginModel.swift in Sources */,
+				22631839266B73AE00DA4240 /* NetworkSessionProtocol.swift in Sources */,
+				2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */,
+				22631841266B753A00DA4240 /* APIError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226317EE266B66C000DA4240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				226317F8266B66C000DA4240 /* FPTBaseFrameworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		226317F5266B66C000DA4240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 226317E8266B66BF00DA4240 /* FPTBaseFramework */;
+			targetProxy = 226317F4266B66C000DA4240 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		226317FB266B66C000DA4240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		226317FC266B66C000DA4240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		226317FE266B66C000DA4240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FPTBaseFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fpt.com.FPTBaseFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		226317FF266B66C000DA4240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FPTBaseFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fpt.com.FPTBaseFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		22631801266B66C000DA4240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FPTBaseFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fpt.com.FPTBaseFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22631802266B66C000DA4240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FPTBaseFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fpt.com.FPTBaseFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		226317E3266B66BF00DA4240 /* Build configuration list for PBXProject "FPTBaseFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226317FB266B66C000DA4240 /* Debug */,
+				226317FC266B66C000DA4240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226317FD266B66C000DA4240 /* Build configuration list for PBXNativeTarget "FPTBaseFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226317FE266B66C000DA4240 /* Debug */,
+				226317FF266B66C000DA4240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22631800266B66C000DA4240 /* Build configuration list for PBXNativeTarget "FPTBaseFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22631801266B66C000DA4240 /* Debug */,
+				22631802266B66C000DA4240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 226317E0266B66BF00DA4240 /* Project object */;
+}
