@@ -8,10 +8,12 @@
 import Foundation
 
 public class LoginViewModel {
-    private let useCase: LoginUseCase
-
-    public  init(useCase: LoginUseCase) {
-        self.useCase = useCase
+    private let useCase: LoginUseCase!
+    private let networkLoginUseCaseProvider: NetworkLoginUseCaseProvider!
+    
+    public init() {
+        self.networkLoginUseCaseProvider = NetworkLoginUseCaseProvider()
+        self.useCase = self.networkLoginUseCaseProvider.makeLoginUseCase()
     }
 
     public  func login(username: String, password: String) {
