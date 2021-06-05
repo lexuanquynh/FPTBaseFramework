@@ -1,0 +1,11 @@
+framework module FPTBaseFramework {
+  umbrella header "FPTBaseFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module FPTBaseFramework.Swift {
+    header "FPTBaseFramework-Swift.h"
+    requires objc
+}
