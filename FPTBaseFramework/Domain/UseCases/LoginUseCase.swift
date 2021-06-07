@@ -8,7 +8,7 @@
 import Foundation
 
 
-public protocol LoginUseCase {
+protocol LoginUseCase {
     /// login request
     /// - Parameters:
     ///   - username: username description

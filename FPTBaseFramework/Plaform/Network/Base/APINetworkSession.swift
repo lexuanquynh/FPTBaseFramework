@@ -8,10 +8,10 @@
 import Foundation
 
 /// Class handling the creation of URLSessionTaks and responding to URSessionDelegate callbacks.
-public class APINetworkSession: NSObject {
+class APINetworkSession: NSObject {
 
     /// The URLSession handing the URLSessionTaks.
-    public var session: URLSession!
+    var session: URLSession!
 
     /// A typealias describing a progress and completion handle tuple.
     private typealias ProgressAndCompletionHandlers = (progress: ProgressHandler?, completion: ((URL?, URLResponse?, Error?) -> Void)?)
@@ -20,7 +20,7 @@ public class APINetworkSession: NSObject {
     private var taskToHandlersMap: [URLSessionTask : ProgressAndCompletionHandlers] = [:]
 
     /// Convenience initializer.
-    public override convenience init() {
+    override convenience init() {
         // Configure the default URLSessionConfiguration.
         let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.timeoutIntervalForResource = 30
@@ -41,7 +41,7 @@ public class APINetworkSession: NSObject {
     /// - Parameters:
     ///   - configuration: `URLSessionConfiguration` instance.
     ///   - delegateQueue: `OperationQueue` instance for scheduling the delegate calls and completion handlers.
-    public init(configuration: URLSessionConfiguration, delegateQueue: OperationQueue) {
+    init(configuration: URLSessionConfiguration, delegateQueue: OperationQueue) {
         super.init()
         self.session = URLSession(configuration: configuration, delegate: self, delegateQueue: delegateQueue)
     }
@@ -72,21 +72,21 @@ public class APINetworkSession: NSObject {
 
 extension APINetworkSession: NetworkSessionProtocol {
 
-    public func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask? {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask? {
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             completionHandler(data, response, error)
         }
         return dataTask
     }
 
-    public func downloadTask(request: URLRequest, progressHandler: ProgressHandler? = nil, completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask? {
+    func downloadTask(request: URLRequest, progressHandler: ProgressHandler? = nil, completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask? {
         let downloadTask = session.downloadTask(with: request)
         // Set the associated progress and completion handlers for this task.
         set(handlers: (progressHandler, completionHandler), for: downloadTask)
         return downloadTask
     }
 
-    public func uploadTask(with request: URLRequest, from fileURL: URL, progressHandler: ProgressHandler? = nil, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask? {
+    func uploadTask(with request: URLRequest, from fileURL: URL, progressHandler: ProgressHandler? = nil, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionUploadTask? {
         let uploadTask = session.uploadTask(with: request, fromFile: fileURL, completionHandler: { (data, urlResponse, error) in
             completion(data, urlResponse, error)
         })
@@ -98,7 +98,7 @@ extension APINetworkSession: NetworkSessionProtocol {
 
 extension APINetworkSession: URLSessionDelegate {
 
-    public func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
         guard let handlers = getHandlers(for: task) else {
             return
         }
@@ -111,7 +111,7 @@ extension APINetworkSession: URLSessionDelegate {
         set(handlers: nil, for: task)
     }
 
-    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         guard let downloadTask = task as? URLSessionDownloadTask,
             let handlers = getHandlers(for: downloadTask) else {
             return
@@ -128,7 +128,7 @@ extension APINetworkSession: URLSessionDelegate {
 
 extension APINetworkSession: URLSessionDownloadDelegate {
 
-    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         guard let handlers = getHandlers(for: downloadTask) else {
             return
         }
@@ -141,7 +141,7 @@ extension APINetworkSession: URLSessionDownloadDelegate {
         set(handlers: nil, for: downloadTask)
     }
 
-    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         guard let handlers = getHandlers(for: downloadTask) else {
             return
         }

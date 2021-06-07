@@ -7,18 +7,18 @@
 
 import Foundation
 
-public  class NetworkLoginUseCase: LoginUseCase {
-    public func login(username: String, password: String, _ completion : @escaping(Result<LoginModel, APIError>) -> Void) {
+class NetworkLoginUseCase: LoginUseCase {
+    func login(username: String, password: String, _ completion : @escaping(Result<LoginModel, APIError>) -> Void) {
         let requestDispatcher = APIRequestDispatcher(environment: APIEnvironment.development, networkSession: APINetworkSession())
         let params: [String : Any] = [
            "username": username,
            "password": password
         ]
 
-        let bookCreationRequest = LoginEnpoint.login(parameters: params)
+        let loginCreationRequest = LoginEnpoint.login(parameters: params)
 
-        let bookOperation = APIOperation(bookCreationRequest)
-        bookOperation.execute(in: requestDispatcher) { result in
+        let loginOperation = APIOperation(loginCreationRequest)
+        loginOperation.execute(in: requestDispatcher) { result in
             switch result {
             case .json(let json, _):
                 guard let data = json as? Data,

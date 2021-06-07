@@ -38,6 +38,7 @@
 		2263183F266B74F400DA4240 /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263183E266B74F400DA4240 /* APIOperation.swift */; };
 		22631841266B753A00DA4240 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631840266B753A00DA4240 /* APIError.swift */; };
 		2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631849266B78C800DA4240 /* LoginEnpoint.swift */; };
+		22ADF5A0266DC073001F3483 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF59F266DC073001F3483 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		2263183E266B74F400DA4240 /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
 		22631840266B753A00DA4240 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		22631849266B78C800DA4240 /* LoginEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnpoint.swift; sourceTree = "<group>"; };
+		22ADF59F266DC073001F3483 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		2263180F266B6EAC00DA4240 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				22ADF59D266DC05D001F3483 /* UseCase */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -236,6 +239,22 @@
 				22631849266B78C800DA4240 /* LoginEnpoint.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		22ADF59D266DC05D001F3483 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				22ADF59E266DC069001F3483 /* Setting */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		22ADF59E266DC069001F3483 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				22ADF59F266DC073001F3483 /* File.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +400,7 @@
 				22631807266B6C2D00DA4240 /* LoginUseCase.swift in Sources */,
 				2263182E266B705900DA4240 /* NetworkLoginUseCaseProvider.swift in Sources */,
 				22631837266B735D00DA4240 /* APIEnvironment.swift in Sources */,
+				22ADF5A0266DC073001F3483 /* File.swift in Sources */,
 				2263180B266B6C7300DA4240 /* LoginModel.swift in Sources */,
 				22631839266B73AE00DA4240 /* NetworkSessionProtocol.swift in Sources */,
 				2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */,

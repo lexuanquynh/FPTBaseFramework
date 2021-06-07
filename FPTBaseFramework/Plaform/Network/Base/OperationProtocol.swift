@@ -8,7 +8,7 @@
 import Foundation
 
 /// The type to which all operations must conform in order to execute and cancel a request.
-public protocol OperationProtocol {
+protocol OperationProtocol {
     associatedtype Output
 
     /// The request to be executed.
@@ -25,7 +25,7 @@ public protocol OperationProtocol {
 }
 
 /// The expected result of an API Operation.
-public enum OperationResult {
+enum OperationResult {
     /// JSON reponse.
     case json(_ : Any?, _ : HTTPURLResponse?)
     /// A downloaded file with an URL.
@@ -35,7 +35,7 @@ public enum OperationResult {
 }
 
 /// Protocol to which a request dispatcher must conform to.
-public protocol RequestDispatcherProtocol {
+protocol RequestDispatcherProtocol {
 
     /// Required initializer.
     /// - Parameters:
