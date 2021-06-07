@@ -33,8 +33,9 @@ public class FPTFramework {
         return sharedNetworkManager
     }
 
+    /// Configure
     public func configure() {
-
+        // Read anything from plist
     }
 
     /// Login with username & password
