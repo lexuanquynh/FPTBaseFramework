@@ -39,6 +39,7 @@
 		22631841266B753A00DA4240 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631840266B753A00DA4240 /* APIError.swift */; };
 		2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631849266B78C800DA4240 /* LoginEnpoint.swift */; };
 		22ADF5A0266DC073001F3483 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF59F266DC073001F3483 /* File.swift */; };
+		22ADF5A3266DC26E001F3483 /* FPTFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF5A2266DC26E001F3483 /* FPTFramework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		22631840266B753A00DA4240 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		22631849266B78C800DA4240 /* LoginEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnpoint.swift; sourceTree = "<group>"; };
 		22ADF59F266DC073001F3483 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		22ADF5A2266DC26E001F3483 /* FPTFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTFramework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		22631805266B6C1A00DA4240 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				22ADF5A1266DC260001F3483 /* Common */,
 				22631830266B711000DA4240 /* Modules */,
 			);
 			path = Application;
@@ -255,6 +258,14 @@
 				22ADF59F266DC073001F3483 /* File.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		22ADF5A1266DC260001F3483 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				22ADF5A2266DC26E001F3483 /* FPTFramework.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,6 +414,7 @@
 				22ADF5A0266DC073001F3483 /* File.swift in Sources */,
 				2263180B266B6C7300DA4240 /* LoginModel.swift in Sources */,
 				22631839266B73AE00DA4240 /* NetworkSessionProtocol.swift in Sources */,
+				22ADF5A3266DC26E001F3483 /* FPTFramework.swift in Sources */,
 				2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */,
 				22631841266B753A00DA4240 /* APIError.swift in Sources */,
 			);

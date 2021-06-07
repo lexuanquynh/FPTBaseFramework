@@ -9,13 +9,21 @@ import UIKit
 import FPTBaseFramework
 
 class ViewController: UIViewController {
-    var loginViewModel: LoginViewModel!
-
     override func viewDidLoad() {
-        super.viewDidLoad()      
-        loginViewModel = LoginViewModel()
-        loginViewModel.login(username: "abc", password: "123") { response in
-            switch response {
+        super.viewDidLoad()
+        // Call Login sample
+        FPTFramework.shared().login(username: "abc", password: "") { result in
+            switch result {
+            case .success(let loginModel):
+                print(loginModel)
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+        // Call login social demo
+        FPTFramework.shared().loginSocial(accessToken: "token here..", type: .facebook) { result in
+            switch result {
             case .success(let loginModel):
                 print(loginModel)
             case .failure(let error):

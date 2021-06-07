@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public struct LoginModel: Codable {
     public var success: Bool?
     public var message: String?

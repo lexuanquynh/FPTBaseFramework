@@ -8,7 +8,7 @@
 import Foundation
 
 /// Enum of API Errors
-enum APIError: Error {
+public enum APIError: Error {
     /// No data received from the server.
     case noData
     /// The server response was invalid (unexpected format).
