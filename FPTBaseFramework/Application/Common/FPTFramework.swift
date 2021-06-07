@@ -48,7 +48,7 @@ public class FPTFramework {
         do {
             // Convert the data to a dictionary and handle errors.
             plistData = try PropertyListSerialization.propertyList(from: plistXML, options: .mutableContainersAndLeaves, format: &propertyListFormat) as! [String: AnyObject]
-            print("plistData \(plistData)")
+            // Read property from plist file
             if let productionBearerAuthorization = plistData["productionBearerAuthorization"] as? String {
                 Common.productionBearerAuthorization = productionBearerAuthorization
             }
