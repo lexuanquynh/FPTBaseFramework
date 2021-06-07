@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkLoginUseCase: LoginUseCase {
     func login(username: String, password: String, _ completion : @escaping(Result<LoginModel, APIError>) -> Void) {
-        let requestDispatcher = APIRequestDispatcher(environment: APIEnvironment.development, networkSession: APINetworkSession())
+        let requestDispatcher = APIRequestDispatcher(networkSession: APINetworkSession())
         let params: [String : Any] = [
            "username": username,
            "password": password

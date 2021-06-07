@@ -35,10 +35,14 @@ class APIRequestDispatcher: RequestDispatcherProtocol {
 
     /// Required initializer.
     /// - Parameters:
-    ///   - environment: Instance conforming to `EnvironmentProtocol` used to determine on which environment the requests will be executed.
     ///   - networkSession: Instance conforming to `NetworkSessionProtocol` used for executing requests with a specific configuration.
-    required init(environment: EnvironmentProtocol, networkSession: NetworkSessionProtocol) {
-        self.environment = environment
+    required init(networkSession: NetworkSessionProtocol) {
+        // Auto switch when change debug or release
+        #if DEBUG
+        self.environment = APIEnvironment.development
+        #else
+        self.environment = APIEnvironment.production
+        #endif
         self.networkSession = networkSession
     }
 
