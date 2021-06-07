@@ -11,6 +11,8 @@ import FPTBaseFramework
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
         // Call Login sample
         FPTFramework.shared().login(username: "abc", password: "") { result in
             switch result {
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+        */
     }
 
 

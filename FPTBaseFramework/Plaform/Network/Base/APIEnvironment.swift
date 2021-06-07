@@ -28,11 +28,14 @@ enum APIEnvironment: EnvironmentProtocol {
         switch self {
         case .development:
             return [
-                "Content-Type" : "application/json",
-                "Authorization" : "Bearer yourBearerToken"
+                "Content-Type": "application/json",
+                "Authorization": Common.developmentBearerAuthorization
             ]
         case .production:
-            return [:]
+            return [
+                "Content-Type": "application/json",
+                "Authorization": Common.productionBearerAuthorization
+            ]
         }
     }
 
@@ -40,9 +43,9 @@ enum APIEnvironment: EnvironmentProtocol {
     var baseURL: String {
         switch self {
         case .development:
-            return "http://api.localhost:3000/v1/"
+            return Common.developmentBaseURL
         case .production:
-            return "https://api.yourapp.com/v1/"
+            return Common.productionBaseURL
         }
     }
 }

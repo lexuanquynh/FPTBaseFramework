@@ -40,6 +40,7 @@
 		2263184A266B78C800DA4240 /* LoginEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22631849266B78C800DA4240 /* LoginEnpoint.swift */; };
 		22ADF5A0266DC073001F3483 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF59F266DC073001F3483 /* File.swift */; };
 		22ADF5A3266DC26E001F3483 /* FPTFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF5A2266DC26E001F3483 /* FPTFramework.swift */; };
+		22ADF5A5266DC807001F3483 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADF5A4266DC807001F3483 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		22631849266B78C800DA4240 /* LoginEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnpoint.swift; sourceTree = "<group>"; };
 		22ADF59F266DC073001F3483 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		22ADF5A2266DC26E001F3483 /* FPTFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTFramework.swift; sourceTree = "<group>"; };
+		22ADF5A4266DC807001F3483 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				22ADF5A2266DC26E001F3483 /* FPTFramework.swift */,
+				22ADF5A4266DC807001F3483 /* Common.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ADF5A5266DC807001F3483 /* Common.swift in Sources */,
 				2263182C266B705000DA4240 /* NetworkLoginUseCase.swift in Sources */,
 				2263180D266B6D1400DA4240 /* LoginUseCaseProvider.swift in Sources */,
 				22631835266B72EF00DA4240 /* RequestType.swift in Sources */,

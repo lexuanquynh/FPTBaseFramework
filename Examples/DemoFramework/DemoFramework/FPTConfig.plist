@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>developmentBaseURL</key>
+	<string>http://api.localhost:3000/v1/</string>	
+    <key>productionBaseURL</key>
+	<string>https://api.yourapp.com/v1/</string>
+    <key>developmentBearerAuthorization</key>
+	<string>Bearer yourBearerToken</string>
+    <key>productionBearerAuthorization</key>
+	<string>Bearer production yourBearerToken</string>
+</dict>
+</plist>

@@ -36,6 +36,35 @@ public class FPTFramework {
     /// Configure
     public func configure() {
         // Read anything from plist
+        self.readPropertyList()
+    }
+
+    /// ReadPropertyList
+    func readPropertyList() {
+        var propertyListFormat =  PropertyListSerialization.PropertyListFormat.xml //Format of the Property List.
+        var plistData: [String: AnyObject] = [:] //Our data
+        let plistPath: String? = Bundle.main.path(forResource: "FPTConfig", ofType: "plist")! //the path of the data
+        let plistXML = FileManager.default.contents(atPath: plistPath!)!
+        do {
+            // Convert the data to a dictionary and handle errors.
+            plistData = try PropertyListSerialization.propertyList(from: plistXML, options: .mutableContainersAndLeaves, format: &propertyListFormat) as! [String: AnyObject]
+            print("plistData \(plistData)")
+            if let productionBearerAuthorization = plistData["productionBearerAuthorization"] as? String {
+                Common.productionBearerAuthorization = productionBearerAuthorization
+            }
+            if let developmentBearerAuthorization = plistData["developmentBearerAuthorization"] as? String {
+                Common.developmentBearerAuthorization = developmentBearerAuthorization
+            }
+            if let productionBaseURL = plistData["productionBaseURL"] as? String {
+                Common.productionBaseURL = productionBaseURL
+            }
+            if let developmentBaseURL = plistData["developmentBaseURL"] as? String {
+                Common.developmentBaseURL = developmentBaseURL
+            }
+        } catch {
+            // Show error
+            print("Error reading plist: \(error), format: \(propertyListFormat)")
+        }
     }
 
     /// Login with username & password
